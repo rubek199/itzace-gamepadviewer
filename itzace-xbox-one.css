@@ -1,11 +1,13 @@
 /* ItzAce / A80 Supra TRUE custom Xbox One skin for GamepadViewer */
 html, body { background: transparent !important; overflow: hidden !important; }
 
-/* Custom skin must target .controller.custom when using ?css= */
 .controller.custom {
   height: 630px !important;
   width: 750px !important;
-  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?v=7") center center / 750px 630px no-repeat !important;
+  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") !important;
+  background-position: center center !important;
+  background-size: 750px 630px !important;
+  background-repeat: no-repeat !important;
 }
 .custom.disconnected { opacity: .35; }
 .custom.disconnected div { display:none; }
