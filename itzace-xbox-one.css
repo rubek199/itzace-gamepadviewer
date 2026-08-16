@@ -1,52 +1,52 @@
-/* ItzAce / A80 Supra Xbox One overlay for GamepadViewer */
-html, body {
-  background: transparent !important;
-  overflow: hidden !important;
-}
+/* ItzAce / A80 Supra TRUE custom Xbox One skin for GamepadViewer */
+html, body { background: transparent !important; overflow: hidden !important; }
 
-/* Use the custom artwork as the actual Xbox One controller shell. */
-.controller.xbox {
-  width: 750px !important;
+/* Custom skin must target .controller.custom when using ?css= */
+.controller.custom {
   height: 630px !important;
-  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?skin=6") center center / 750px 630px no-repeat !important;
-  position: absolute !important;
-  filter: drop-shadow(0 0 10px rgba(255,0,0,.24));
+  width: 750px !important;
+  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?v=7") center center / 750px 630px no-repeat !important;
 }
+.custom.disconnected { opacity: .35; }
+.custom.disconnected div { display:none; }
 
-/* Make sure no pseudo shell can cover the custom artwork. */
-.controller.xbox::before,
-.controller.xbox::after {
-  display: none !important;
-  content: none !important;
-}
+.custom .triggers { width:446px; height:121px; position:absolute; left:152px; top:0; }
+.custom .trigger { width:88px; height:121px; background:none; opacity:0; }
+.custom .trigger.left { float:left; }
+.custom .trigger.right { float:right; transform:rotateY(180deg); }
 
-/* Preserve GamepadViewer's native Xbox One live controls. */
-.controller.xbox .triggers,
-.controller.xbox .bumpers,
-.controller.xbox .quadrant,
-.controller.xbox .arrows,
-.controller.xbox .abxy,
-.controller.xbox .sticks,
-.controller.xbox .dpad {
-  z-index: 5 !important;
-}
+.custom .bumper { width:170px; height:61px; background:rgba(255,0,0,.82); opacity:0; border-radius:30px; box-shadow:0 0 14px #f00; }
+.custom .bumpers { position:absolute; width:536px; height:56px; left:107px; top:129px; }
+.custom .bumper.left { float:left; }
+.custom .bumper.right { float:right; }
+.custom .bumper.pressed { opacity:.9; }
 
-/* Press glow. */
-.xbox .button.pressed,
-.xbox .stick.pressed,
-.xbox .face.pressed,
-.xbox .bumper.pressed,
-.xbox .back.pressed,
-.xbox .start.pressed {
-  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px #f00) !important;
-}
+.custom .quadrant { position:absolute; width:45px; height:45px; top:258px; left:354px; }
 
-/* Keep custom art visible in disconnected mode too. */
-.controller.xbox.disconnected {
-  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?skin=6") center center / 750px 630px no-repeat !important;
-  opacity: .45;
-}
+.custom .arrows { position:absolute; width:141px; height:33px; top:264px; left:306px; }
+.custom .back, .custom .start { width:33px; height:33px; opacity:0; border-radius:50%; background:rgba(255,0,0,.85); border:2px solid #fff; }
+.custom .back { float:left; }
+.custom .start { float:right; }
+.custom .back.pressed, .custom .start.pressed { opacity:1; box-shadow:0 0 12px #fff,0 0 20px #f00; }
 
-.controller {
-  margin-top: 0 !important;
-}
+.custom .abxy { position:absolute; width:153px; height:156px; top:192px; left:488px; }
+.custom .button { position:absolute; width:48px; height:48px; border-radius:50%; opacity:0; background:rgba(255,0,0,.78); border:3px solid #fff; box-sizing:border-box; box-shadow:0 0 10px #fff,0 0 22px #f00; }
+.custom .a { top:108px; left:55px; }
+.custom .b { top:58px; right:0; }
+.custom .x { top:58px; left:4px; }
+.custom .y { left:55px; top:7px; }
+.custom .button.pressed { opacity:1; }
+
+.custom .sticks { position:absolute; width:371px; height:196px; top:239px; left:144px; }
+.custom .stick { position:absolute; width:83px; height:83px; border-radius:50%; background:rgba(0,0,0,.25); border:3px solid rgba(255,0,0,.8); box-sizing:border-box; box-shadow:0 0 10px rgba(255,0,0,.45); }
+.custom .stick.left { top:0; left:0; }
+.custom .stick.right { top:113px; left:288px; }
+.custom .stick.pressed { border-color:#fff; box-shadow:0 0 8px #fff,0 0 20px #f00; }
+
+.custom .dpad { position:absolute; width:110px; height:111px; top:345px; left:223px; }
+.custom .face { position:absolute; opacity:0; background:rgba(255,0,0,.8); border:2px solid #fff; box-sizing:border-box; box-shadow:0 0 14px rgba(255,0,0,.9); }
+.custom .face.pressed { opacity:1; }
+.custom .face.up { left:38px; top:0; width:34px; height:56px; }
+.custom .face.down { left:38px; bottom:0; width:34px; height:56px; }
+.custom .face.left { width:55px; height:35px; top:38px; left:0; }
+.custom .face.right { width:55px; height:35px; top:38px; right:0; }
