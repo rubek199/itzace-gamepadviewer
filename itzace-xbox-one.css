@@ -1,34 +1,34 @@
-/*
-  ItzAce / A80 Supra Xbox One skin for GamepadViewer
-  Designed for the Xbox One skin at https://gamepadviewer.com/
-*/
+/* ItzAce / A80 Supra Xbox One overlay for GamepadViewer */
 html, body { background: transparent !important; }
-.controller.xbox, .controller.custom {
+
+.controller.xbox {
   width: 750px !important;
   height: 630px !important;
-  background-image: url("./itzace-xbox-one.png") !important;
+  background-image: url("https://cdn.jsdelivr.net/gh/rubek199/itzace-gamepadviewer@main/itzace-xbox-one.png") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 750px 630px !important;
   filter: drop-shadow(0 0 10px rgba(255,0,0,.22));
 }
-.xbox.disconnected, .custom.disconnected {
-  background-image: url("./itzace-xbox-one.png") !important;
+
+/* Keep GamepadViewer's built-in Xbox One control positions and animations. */
+.controller.xbox.disconnected {
+  background-image: url("https://cdn.jsdelivr.net/gh/rubek199/itzace-gamepadviewer@main/itzace-xbox-one.png") !important;
   opacity: .42;
 }
-.xbox.disconnected div, .custom.disconnected div { display:none; }
-.xbox .button,.xbox .face,.xbox .stick,.xbox .bumper,.xbox .trigger,.xbox .back,.xbox .start,
-.custom .button,.custom .face,.custom .stick,.custom .bumper,.custom .trigger,.custom .back,.custom .start { background-image:none !important; }
-.xbox .button,.custom .button { width:48px !important;height:48px !important;border-radius:50%;background:rgba(255,255,255,.02) !important;box-sizing:border-box;opacity:.01; }
-.xbox .button.pressed,.custom .button.pressed { opacity:1 !important;margin-top:0 !important;background:rgba(255,0,0,.52) !important;border:3px solid #fff !important;box-shadow:0 0 8px #fff,0 0 20px #f00,0 0 34px #f00; }
-.xbox .stick,.custom .stick { width:83px !important;height:83px !important;border-radius:50%;background:rgba(0,0,0,.12) !important;border:3px solid rgba(255,0,0,.86) !important;box-sizing:border-box;box-shadow:inset 0 0 14px rgba(255,255,255,.13),0 0 8px rgba(255,0,0,.35);opacity:.8; }
-.xbox .stick.pressed,.custom .stick.pressed { border-color:#fff !important;box-shadow:0 0 8px #fff,0 0 20px #f00 !important; }
-.xbox .face,.custom .face { background:rgba(255,0,0,.7) !important;border:2px solid #fff !important;border-radius:8px;box-shadow:0 0 14px rgba(255,0,0,.9);opacity:0 !important; }
-.xbox .face.pressed,.custom .face.pressed { opacity:1 !important; }
-.xbox .back,.xbox .start,.custom .back,.custom .start { width:33px !important;height:33px !important;border-radius:50%;background:rgba(255,0,0,.72) !important;border:2px solid #fff !important;box-shadow:0 0 14px rgba(255,0,0,.9);opacity:0 !important; }
-.xbox .back.pressed,.xbox .start.pressed,.custom .back.pressed,.custom .start.pressed { opacity:1 !important; }
-.xbox .bumper,.custom .bumper { background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,0,0,.8)) !important;border-radius:28px;box-shadow:0 0 18px rgba(255,0,0,.85);opacity:0 !important; }
-.xbox .bumper.pressed,.custom .bumper.pressed { opacity:.9 !important; }
-.xbox .trigger,.custom .trigger { background:linear-gradient(180deg,rgba(255,0,0,.75),rgba(255,255,255,.2)) !important;border-radius:28px 28px 10px 10px;box-shadow:0 0 18px rgba(255,0,0,.85); }
-.xbox .quadrant,.custom .quadrant { background:rgba(0,0,0,.55) !important;border:2px solid #f00;border-radius:50%;box-shadow:0 0 12px rgba(255,0,0,.55); }
-.controller { margin-top:0 !important; }
+
+/* Red/white press accents while preserving native Xbox positioning. */
+.xbox .button.pressed {
+  filter: drop-shadow(0 0 7px #fff) drop-shadow(0 0 14px #f00);
+}
+.xbox .stick.pressed {
+  filter: drop-shadow(0 0 7px #fff) drop-shadow(0 0 14px #f00);
+}
+.xbox .face.pressed,
+.xbox .bumper.pressed,
+.xbox .back.pressed,
+.xbox .start.pressed {
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #f00);
+}
+
+.controller { margin-top: 0 !important; }
