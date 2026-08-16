@@ -4,37 +4,34 @@ html, body {
   overflow: hidden !important;
 }
 
-/* Keep GamepadViewer's native Xbox One skin/geometry, but hide only its stock shell. */
+/* Use the custom artwork as the actual Xbox One controller shell. */
 .controller.xbox {
   width: 750px !important;
   height: 630px !important;
-  background-image: none !important;
+  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?skin=6") center center / 750px 630px no-repeat !important;
   position: absolute !important;
-}
-
-/* Draw the ItzAce controller artwork as its own layer so GamepadViewer cannot overwrite it. */
-.controller.xbox::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  width: 750px !important;
-  height: 630px !important;
-  background-image: url("https://cdn.jsdelivr.net/gh/rubek199/itzace-gamepadviewer@main/itzace-xbox-one.png?v=3") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 750px 630px !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
   filter: drop-shadow(0 0 10px rgba(255,0,0,.24));
 }
 
-/* Keep every live input element above the artwork. */
-.controller.xbox > div {
-  position: absolute;
-  z-index: 2 !important;
+/* Make sure no pseudo shell can cover the custom artwork. */
+.controller.xbox::before,
+.controller.xbox::after {
+  display: none !important;
+  content: none !important;
 }
 
-/* Native GamepadViewer input graphics remain intact; only add red/white glow on presses. */
+/* Preserve GamepadViewer's native Xbox One live controls. */
+.controller.xbox .triggers,
+.controller.xbox .bumpers,
+.controller.xbox .quadrant,
+.controller.xbox .arrows,
+.controller.xbox .abxy,
+.controller.xbox .sticks,
+.controller.xbox .dpad {
+  z-index: 5 !important;
+}
+
+/* Press glow. */
 .xbox .button.pressed,
 .xbox .stick.pressed,
 .xbox .face.pressed,
@@ -44,12 +41,10 @@ html, body {
   filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px #f00) !important;
 }
 
-/* Do not replace the artwork when GamepadViewer toggles disconnected state. */
+/* Keep custom art visible in disconnected mode too. */
 .controller.xbox.disconnected {
-  background-image: none !important;
-}
-.controller.xbox.disconnected::before {
-  opacity: .42 !important;
+  background: url("https://raw.githubusercontent.com/rubek199/itzace-gamepadviewer/main/itzace-xbox-one.png?skin=6") center center / 750px 630px no-repeat !important;
+  opacity: .45;
 }
 
 .controller {
