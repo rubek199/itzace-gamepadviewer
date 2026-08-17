@@ -12,40 +12,47 @@ html, body { background: transparent !important; overflow: hidden !important; }
 .custom.disconnected { opacity: .35; }
 .custom.disconnected div { display:none; }
 
+/* Preserve triggers for now; only light when used. */
 .custom .triggers { width:446px; height:121px; position:absolute; left:152px; top:0; }
 .custom .trigger { width:88px; height:121px; background:none; opacity:0; }
 .custom .trigger.left { float:left; }
 .custom .trigger.right { float:right; transform:rotateY(180deg); }
 
+/* Preserve bumpers for now; only light when pressed. */
 .custom .bumper { width:170px; height:61px; background:rgba(255,0,0,.82); opacity:0; border-radius:30px; box-shadow:0 0 14px #f00; }
 .custom .bumpers { position:absolute; width:536px; height:56px; left:107px; top:129px; }
 .custom .bumper.left { float:left; }
 .custom .bumper.right { float:right; }
 .custom .bumper.pressed { opacity:.9; }
 
-.custom .quadrant { position:absolute; width:45px; height:45px; top:258px; left:354px; }
+/* Hide the player quadrant overlay; the artwork already includes the Xbox logo. */
+.custom .quadrant { display:none !important; }
 
-.custom .arrows { position:absolute; width:141px; height:33px; top:264px; left:306px; }
-.custom .back, .custom .start { width:33px; height:33px; opacity:0; border-radius:50%; background:rgba(255,0,0,.85); border:2px solid #fff; }
+/* View/Menu buttons aligned to the tiny center buttons in the artwork. */
+.custom .arrows { position:absolute; width:62px; height:28px; top:280px; left:342px; }
+.custom .back, .custom .start { width:28px; height:28px; opacity:0; border-radius:50%; background:rgba(255,0,0,.85); border:2px solid #fff; box-sizing:border-box; }
 .custom .back { float:left; }
 .custom .start { float:right; }
 .custom .back.pressed, .custom .start.pressed { opacity:1; box-shadow:0 0 12px #fff,0 0 20px #f00; }
 
-.custom .abxy { position:absolute; width:153px; height:156px; top:192px; left:488px; }
+/* ABXY overlays now sit directly over the printed buttons and only appear on press. */
+.custom .abxy { position:absolute; width:153px; height:156px; top:145px; left:488px; }
 .custom .button { position:absolute; width:48px; height:48px; border-radius:50%; opacity:0; background:rgba(255,0,0,.78); border:3px solid #fff; box-sizing:border-box; box-shadow:0 0 10px #fff,0 0 22px #f00; }
 .custom .a { top:108px; left:55px; }
 .custom .b { top:58px; right:0; }
-.custom .x { top:58px; left:4px; }
+.custom .x { top:58px; left:23px; }
 .custom .y { left:55px; top:7px; }
 .custom .button.pressed { opacity:1; }
 
-.custom .sticks { position:absolute; width:371px; height:196px; top:239px; left:144px; }
-.custom .stick { position:absolute; width:83px; height:83px; border-radius:50%; background:rgba(0,0,0,.25); border:3px solid rgba(255,0,0,.8); box-sizing:border-box; box-shadow:0 0 10px rgba(255,0,0,.45); }
-.custom .stick.left { top:0; left:0; }
-.custom .stick.right { top:113px; left:288px; }
+/* Sticks use individual coordinates so each ring can match the artwork precisely. */
+.custom .sticks { position:absolute; width:750px; height:630px; left:0; top:0; }
+.custom .stick { position:absolute; width:83px; height:83px; border-radius:50%; background:rgba(0,0,0,.18); border:3px solid rgba(255,0,0,.8); box-sizing:border-box; box-shadow:0 0 10px rgba(255,0,0,.45); }
+.custom .stick.left { left:138px; top:215px; }
+.custom .stick.right { left:432px; top:321px; }
 .custom .stick.pressed { border-color:#fff; box-shadow:0 0 8px #fff,0 0 20px #f00; }
 
-.custom .dpad { position:absolute; width:110px; height:111px; top:345px; left:223px; }
+/* D-pad overlay moved up and slightly right to match the printed cross. */
+.custom .dpad { position:absolute; width:110px; height:111px; top:289px; left:237px; }
 .custom .face { position:absolute; opacity:0; background:rgba(255,0,0,.8); border:2px solid #fff; box-sizing:border-box; box-shadow:0 0 14px rgba(255,0,0,.9); }
 .custom .face.pressed { opacity:1; }
 .custom .face.up { left:38px; top:0; width:34px; height:56px; }
