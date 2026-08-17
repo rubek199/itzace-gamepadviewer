@@ -1,48 +1,25 @@
-/* ItzAce / A80 Supra — EDIT CSS for GamepadViewer Xbox One skin
-   Use with the built-in Xbox One skin and the "Edit CSS URL" field.
-   This keeps GamepadViewer's native control geometry/animations and only swaps the base shell artwork. */
+/* ItzAce / A80 Supra — GamepadViewer Xbox One (White) EDIT CSS
+   Keeps GamepadViewer's native Xbox One controls and replaces only the shell artwork. */
 
 html, body {
   background: transparent !important;
 }
 
-/* Replace only the Xbox One controller shell/background. */
-.controller.xbox,
-.controller.xbox.white,
-.xbox.controller,
-.xbox.white.controller {
+/* Edit CSS mode adds .edit to the selected built-in skin.
+   Target the white Xbox One skin with high specificity so its stock white shell cannot win. */
+.controller.xbox.white.edit,
+.controller.xbox.edit.white,
+.xbox.white.edit,
+.xbox.edit.white,
+.controller.xbox.edit,
+.xbox.edit {
   width: 750px !important;
   height: 630px !important;
+  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") center center / 750px 630px no-repeat !important;
   background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: 750px 630px !important;
 }
 
-/* Preserve GamepadViewer's stock positions and sprite behavior for all live controls. */
-.xbox .triggers,
-.xbox .trigger,
-.xbox .bumpers,
-.xbox .bumper,
-.xbox .quadrant,
-.xbox .arrows,
-.xbox .back,
-.xbox .start,
-.xbox .abxy,
-.xbox .button,
-.xbox .sticks,
-.xbox .stick,
-.xbox .dpad,
-.xbox .face {
-  /* intentionally no geometry overrides */
-}
-
-/* Optional subtle press glow without changing positions. */
-.xbox .button.pressed,
-.xbox .stick.pressed,
-.xbox .face.pressed,
-.xbox .bumper.pressed,
-.xbox .back.pressed,
-.xbox .start.pressed {
-  filter: drop-shadow(0 0 5px rgba(255,255,255,.9)) drop-shadow(0 0 10px rgba(255,0,0,.8));
-}
+/* Leave all stock Xbox One controls untouched so GamepadViewer keeps its native geometry. */
