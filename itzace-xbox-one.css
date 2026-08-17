@@ -1,25 +1,20 @@
-/* ItzAce / A80 Supra — GamepadViewer Xbox One (White) EDIT CSS
-   Keeps GamepadViewer's native Xbox One controls and replaces only the shell artwork. */
+/* ItzAce / A80 Supra — GamepadViewer Edit CSS
+   Keep GamepadViewer's built-in Xbox One controls and replace only the base controller artwork. */
 
 html, body {
   background: transparent !important;
 }
 
-/* Edit CSS mode adds .edit to the selected built-in skin.
-   Target the white Xbox One skin with high specificity so its stock white shell cannot win. */
-.controller.xbox.white.edit,
-.controller.xbox.edit.white,
-.xbox.white.edit,
-.xbox.edit.white,
-.controller.xbox.edit,
-.xbox.edit {
+/* GamepadViewer's own Edit CSS example targets .edit directly. */
+.edit,
+.controller.edit {
   width: 750px !important;
   height: 630px !important;
-  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") center center / 750px 630px no-repeat !important;
-  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") !important;
+  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=11") center center / 750px 630px no-repeat !important;
+  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=11") !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   background-size: 750px 630px !important;
 }
 
-/* Leave all stock Xbox One controls untouched so GamepadViewer keeps its native geometry. */
+/* Leave all built-in input elements alone so native Xbox One geometry remains intact. */
