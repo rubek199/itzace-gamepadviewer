@@ -1,151 +1,54 @@
-/* ItzAce / A80 Supra — CUSTOM CSS skin for GamepadViewer
-   Use this URL in GamepadViewer's Custom CSS URL field, NOT Edit CSS URL. */
-
-html, body {
-  background: transparent !important;
-  overflow: hidden !important;
-}
+/* ItzAce / A80 Supra TRUE custom Xbox One skin for GamepadViewer */
+html, body { background: transparent !important; overflow: hidden !important; }
 
 .controller.custom {
-  width: 750px !important;
   height: 630px !important;
-  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=12") center center / 750px 630px no-repeat !important;
+  width: 750px !important;
+  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png") !important;
+  background-position: center center !important;
+  background-size: 750px 630px !important;
+  background-repeat: no-repeat !important;
 }
+.custom.disconnected { opacity: .35; }
+.custom.disconnected div { display:none; }
 
-.custom.disconnected {
-  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=12") !important;
-  opacity: .45;
-}
+.custom .triggers { width:446px; height:121px; position:absolute; left:152px; top:0; }
+.custom .trigger { width:88px; height:121px; background:none; opacity:0; }
+.custom .trigger.left { float:left; }
+.custom .trigger.right { float:right; transform:rotateY(180deg); }
 
-.custom.disconnected div {
-  display: none;
-}
+.custom .bumper { width:170px; height:61px; background:rgba(255,0,0,.82); opacity:0; border-radius:30px; box-shadow:0 0 14px #f00; }
+.custom .bumpers { position:absolute; width:536px; height:56px; left:107px; top:129px; }
+.custom .bumper.left { float:left; }
+.custom .bumper.right { float:right; }
+.custom .bumper.pressed { opacity:.9; }
 
-/* Xbox One control geometry for the custom skin */
-.custom .triggers {
-  width: 536px;
-  height: 90px;
-  position: absolute;
-  left: 107px;
-  top: 0;
-}
+.custom .quadrant { position:absolute; width:45px; height:45px; top:258px; left:354px; }
 
-.custom .trigger {
-  width: 88px;
-  height: 90px;
-  position: absolute;
-  background: rgba(255,0,0,.18);
-  border-radius: 28px 28px 10px 10px;
-  opacity: .15;
-}
-.custom .trigger.left { left: 0; }
-.custom .trigger.right { right: 0; }
+.custom .arrows { position:absolute; width:141px; height:33px; top:264px; left:306px; }
+.custom .back, .custom .start { width:33px; height:33px; opacity:0; border-radius:50%; background:rgba(255,0,0,.85); border:2px solid #fff; }
+.custom .back { float:left; }
+.custom .start { float:right; }
+.custom .back.pressed, .custom .start.pressed { opacity:1; box-shadow:0 0 12px #fff,0 0 20px #f00; }
 
-.custom .bumpers {
-  width: 536px;
-  height: 61px;
-  position: absolute;
-  left: 107px;
-  top: 90px;
-}
-.custom .bumper {
-  width: 170px;
-  height: 61px;
-  position: absolute;
-  opacity: .01;
-}
-.custom .bumper.left { left: 0; }
-.custom .bumper.right { right: 0; }
-.custom .bumper.pressed { opacity: .55; background: rgba(255,0,0,.45); }
+.custom .abxy { position:absolute; width:153px; height:156px; top:192px; left:488px; }
+.custom .button { position:absolute; width:48px; height:48px; border-radius:50%; opacity:0; background:rgba(255,0,0,.78); border:3px solid #fff; box-sizing:border-box; box-shadow:0 0 10px #fff,0 0 22px #f00; }
+.custom .a { top:108px; left:55px; }
+.custom .b { top:58px; right:0; }
+.custom .x { top:58px; left:4px; }
+.custom .y { left:55px; top:7px; }
+.custom .button.pressed { opacity:1; }
 
-.custom .sticks {
-  width: 367px;
-  height: 168px;
-  position: absolute;
-  left: 144px;
-  top: 214px;
-}
-.custom .stick {
-  width: 83px;
-  height: 83px;
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255,0,0,.08);
-  border: 2px solid rgba(255,0,0,.55);
-  box-sizing: border-box;
-}
-.custom .stick.left { left: 0; top: 0; }
-.custom .stick.right { right: 0; bottom: 0; }
-.custom .stick.pressed {
-  border-color: #fff;
-  box-shadow: 0 0 8px #fff, 0 0 18px #f00;
-}
+.custom .sticks { position:absolute; width:371px; height:196px; top:239px; left:144px; }
+.custom .stick { position:absolute; width:83px; height:83px; border-radius:50%; background:rgba(0,0,0,.25); border:3px solid rgba(255,0,0,.8); box-sizing:border-box; box-shadow:0 0 10px rgba(255,0,0,.45); }
+.custom .stick.left { top:0; left:0; }
+.custom .stick.right { top:113px; left:288px; }
+.custom .stick.pressed { border-color:#fff; box-shadow:0 0 8px #fff,0 0 20px #f00; }
 
-.custom .abxy {
-  width: 157px;
-  height: 157px;
-  position: absolute;
-  left: 548px;
-  top: 195px;
-}
-.custom .button {
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  border-radius: 50%;
-  opacity: .01;
-  box-sizing: border-box;
-}
-.custom .button.a { left: 54px; top: 106px; }
-.custom .button.b { left: 106px; top: 54px; }
-.custom .button.x { left: 2px; top: 54px; }
-.custom .button.y { left: 54px; top: 2px; }
-.custom .button.pressed {
-  opacity: .75;
-  background: rgba(255,0,0,.45);
-  border: 2px solid #fff;
-  box-shadow: 0 0 8px #fff, 0 0 18px #f00;
-}
-
-.custom .dpad {
-  width: 125px;
-  height: 125px;
-  position: absolute;
-  left: 213px;
-  top: 328px;
-}
-.custom .face {
-  position: absolute;
-  opacity: .01;
-  background: rgba(255,0,0,.5);
-}
-.custom .face.up { width: 42px; height: 62px; left: 42px; top: 0; }
-.custom .face.down { width: 42px; height: 62px; left: 42px; bottom: 0; }
-.custom .face.left { width: 62px; height: 42px; left: 0; top: 42px; }
-.custom .face.right { width: 62px; height: 42px; right: 0; top: 42px; }
-.custom .face.pressed { opacity: .65; }
-
-.custom .back,
-.custom .start {
-  width: 33px;
-  height: 33px;
-  position: absolute;
-  top: 284px;
-  border-radius: 50%;
-  opacity: .01;
-}
-.custom .back { left: 314px; }
-.custom .start { left: 403px; }
-.custom .back.pressed,
-.custom .start.pressed {
-  opacity: .75;
-  background: rgba(255,0,0,.45);
-  border: 2px solid #fff;
-}
-
-.custom .quadrant {
-  position: absolute;
-  left: 359px;
-  top: 165px;
-  opacity: .01;
-}
+.custom .dpad { position:absolute; width:110px; height:111px; top:345px; left:223px; }
+.custom .face { position:absolute; opacity:0; background:rgba(255,0,0,.8); border:2px solid #fff; box-sizing:border-box; box-shadow:0 0 14px rgba(255,0,0,.9); }
+.custom .face.pressed { opacity:1; }
+.custom .face.up { left:38px; top:0; width:34px; height:56px; }
+.custom .face.down { left:38px; bottom:0; width:34px; height:56px; }
+.custom .face.left { width:55px; height:35px; top:38px; left:0; }
+.custom .face.right { width:55px; height:35px; top:38px; right:0; }
