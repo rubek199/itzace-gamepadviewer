@@ -1,20 +1,151 @@
-/* ItzAce / A80 Supra — GamepadViewer Edit CSS
-   Keep GamepadViewer's built-in Xbox One controls and replace only the base controller artwork. */
+/* ItzAce / A80 Supra — CUSTOM CSS skin for GamepadViewer
+   Use this URL in GamepadViewer's Custom CSS URL field, NOT Edit CSS URL. */
 
 html, body {
   background: transparent !important;
+  overflow: hidden !important;
 }
 
-/* GamepadViewer's own Edit CSS example targets .edit directly. */
-.edit,
-.controller.edit {
+.controller.custom {
   width: 750px !important;
   height: 630px !important;
-  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=11") center center / 750px 630px no-repeat !important;
-  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=11") !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-size: 750px 630px !important;
+  background: transparent url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=12") center center / 750px 630px no-repeat !important;
 }
 
-/* Leave all built-in input elements alone so native Xbox One geometry remains intact. */
+.custom.disconnected {
+  background-image: url("https://rubek199.github.io/itzace-gamepadviewer/itzace-xbox-one.png?v=12") !important;
+  opacity: .45;
+}
+
+.custom.disconnected div {
+  display: none;
+}
+
+/* Xbox One control geometry for the custom skin */
+.custom .triggers {
+  width: 536px;
+  height: 90px;
+  position: absolute;
+  left: 107px;
+  top: 0;
+}
+
+.custom .trigger {
+  width: 88px;
+  height: 90px;
+  position: absolute;
+  background: rgba(255,0,0,.18);
+  border-radius: 28px 28px 10px 10px;
+  opacity: .15;
+}
+.custom .trigger.left { left: 0; }
+.custom .trigger.right { right: 0; }
+
+.custom .bumpers {
+  width: 536px;
+  height: 61px;
+  position: absolute;
+  left: 107px;
+  top: 90px;
+}
+.custom .bumper {
+  width: 170px;
+  height: 61px;
+  position: absolute;
+  opacity: .01;
+}
+.custom .bumper.left { left: 0; }
+.custom .bumper.right { right: 0; }
+.custom .bumper.pressed { opacity: .55; background: rgba(255,0,0,.45); }
+
+.custom .sticks {
+  width: 367px;
+  height: 168px;
+  position: absolute;
+  left: 144px;
+  top: 214px;
+}
+.custom .stick {
+  width: 83px;
+  height: 83px;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,0,0,.08);
+  border: 2px solid rgba(255,0,0,.55);
+  box-sizing: border-box;
+}
+.custom .stick.left { left: 0; top: 0; }
+.custom .stick.right { right: 0; bottom: 0; }
+.custom .stick.pressed {
+  border-color: #fff;
+  box-shadow: 0 0 8px #fff, 0 0 18px #f00;
+}
+
+.custom .abxy {
+  width: 157px;
+  height: 157px;
+  position: absolute;
+  left: 548px;
+  top: 195px;
+}
+.custom .button {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  border-radius: 50%;
+  opacity: .01;
+  box-sizing: border-box;
+}
+.custom .button.a { left: 54px; top: 106px; }
+.custom .button.b { left: 106px; top: 54px; }
+.custom .button.x { left: 2px; top: 54px; }
+.custom .button.y { left: 54px; top: 2px; }
+.custom .button.pressed {
+  opacity: .75;
+  background: rgba(255,0,0,.45);
+  border: 2px solid #fff;
+  box-shadow: 0 0 8px #fff, 0 0 18px #f00;
+}
+
+.custom .dpad {
+  width: 125px;
+  height: 125px;
+  position: absolute;
+  left: 213px;
+  top: 328px;
+}
+.custom .face {
+  position: absolute;
+  opacity: .01;
+  background: rgba(255,0,0,.5);
+}
+.custom .face.up { width: 42px; height: 62px; left: 42px; top: 0; }
+.custom .face.down { width: 42px; height: 62px; left: 42px; bottom: 0; }
+.custom .face.left { width: 62px; height: 42px; left: 0; top: 42px; }
+.custom .face.right { width: 62px; height: 42px; right: 0; top: 42px; }
+.custom .face.pressed { opacity: .65; }
+
+.custom .back,
+.custom .start {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 284px;
+  border-radius: 50%;
+  opacity: .01;
+}
+.custom .back { left: 314px; }
+.custom .start { left: 403px; }
+.custom .back.pressed,
+.custom .start.pressed {
+  opacity: .75;
+  background: rgba(255,0,0,.45);
+  border: 2px solid #fff;
+}
+
+.custom .quadrant {
+  position: absolute;
+  left: 359px;
+  top: 165px;
+  opacity: .01;
+}
