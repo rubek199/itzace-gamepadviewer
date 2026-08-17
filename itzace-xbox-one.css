@@ -39,10 +39,11 @@ html, body { background: transparent !important; overflow: hidden !important; }
 .custom .y { left:55px; top:7px; }
 .custom .button.pressed { opacity:1; }
 
-.custom .sticks { position:absolute; width:371px; height:196px; top:239px; left:144px; }
+/* Only the joystick overlay positions are adjusted here. */
+.custom .sticks { position:absolute; width:750px; height:630px; top:0; left:0; }
 .custom .stick { position:absolute; width:83px; height:83px; border-radius:50%; background:rgba(0,0,0,.25); border:3px solid rgba(255,0,0,.8); box-sizing:border-box; box-shadow:0 0 10px rgba(255,0,0,.45); }
-.custom .stick.left { top:0; left:0; }
-.custom .stick.right { top:113px; left:288px; }
+.custom .stick.left { top:189px; left:107px; }
+.custom .stick.right { top:302px; left:435px; }
 .custom .stick.pressed { border-color:#fff; box-shadow:0 0 8px #fff,0 0 20px #f00; }
 
 .custom .dpad { position:absolute; width:110px; height:111px; top:345px; left:223px; }
